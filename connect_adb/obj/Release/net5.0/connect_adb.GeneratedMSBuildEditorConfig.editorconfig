@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = connect_adb
-build_property.ProjectDir = D:\connect-ADB\connect_adb\connect_adb\
+build_property.ProjectDir = D:\automatic-ADB\connect_adb\

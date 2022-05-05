@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Kfxu4ykMSFv4mACus7OMkfEmi6lPTkBZpEqTc7xavlQpBN4oC8FffGxS9134lpdu1ekhsDl3jtioF196RDuNzA==",
+  "dgSpecHash": "9GQ4BDEYzrZh8c8Ye73zDyAzNxzbrziA3wHeDflAKQt41RhLxvzVSUXdol5aJpVvKvmVxUE+4fcbp41DLkO68w==",
   "success": true,
-  "projectFilePath": "D:\\connect-ADB\\connect_adb\\connect_adb\\connect_adb.csproj",
+  "projectFilePath": "D:\\automatic-ADB\\connect_adb\\connect_adb.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
