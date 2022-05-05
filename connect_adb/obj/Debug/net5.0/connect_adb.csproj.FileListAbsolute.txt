@@ -1,0 +1,16 @@
+D:\connect-ADB\connect_adb\connect_adb\bin\Debug\net5.0\connect_adb.exe
+D:\connect-ADB\connect_adb\connect_adb\bin\Debug\net5.0\connect_adb.deps.json
+D:\connect-ADB\connect_adb\connect_adb\bin\Debug\net5.0\connect_adb.runtimeconfig.json
+D:\connect-ADB\connect_adb\connect_adb\bin\Debug\net5.0\connect_adb.runtimeconfig.dev.json
+D:\connect-ADB\connect_adb\connect_adb\bin\Debug\net5.0\connect_adb.dll
+D:\connect-ADB\connect_adb\connect_adb\bin\Debug\net5.0\ref\connect_adb.dll
+D:\connect-ADB\connect_adb\connect_adb\bin\Debug\net5.0\connect_adb.pdb
+D:\connect-ADB\connect_adb\connect_adb\obj\Debug\net5.0\connect_adb.csproj.AssemblyReference.cache
+D:\connect-ADB\connect_adb\connect_adb\obj\Debug\net5.0\connect_adb.GeneratedMSBuildEditorConfig.editorconfig
+D:\connect-ADB\connect_adb\connect_adb\obj\Debug\net5.0\connect_adb.AssemblyInfoInputs.cache
+D:\connect-ADB\connect_adb\connect_adb\obj\Debug\net5.0\connect_adb.AssemblyInfo.cs
+D:\connect-ADB\connect_adb\connect_adb\obj\Debug\net5.0\connect_adb.csproj.CoreCompileInputs.cache
+D:\connect-ADB\connect_adb\connect_adb\obj\Debug\net5.0\connect_adb.dll
+D:\connect-ADB\connect_adb\connect_adb\obj\Debug\net5.0\ref\connect_adb.dll
+D:\connect-ADB\connect_adb\connect_adb\obj\Debug\net5.0\connect_adb.pdb
+D:\connect-ADB\connect_adb\connect_adb\obj\Debug\net5.0\connect_adb.genruntimeconfig.cache
