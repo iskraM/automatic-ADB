@@ -54,7 +54,6 @@ namespace connect_adb
             }
 
             // get all IPs of devices
-            // TODO - problem ker nastaja BLOCKING
             Console.WriteLine("Collecting IPs...");
 
             foreach (string id in deviceIDs)
@@ -82,18 +81,26 @@ namespace connect_adb
             foreach (string id in deviceIDs)
             {
                 p.Start();
+                System.Threading.Thread.Sleep(100);
 
                 p.StandardInput.WriteLine($"adb -s {id} tcpip 5555");
+                System.Threading.Thread.Sleep(100);
+                
                 p.StandardInput.WriteLine("exit");
+                System.Threading.Thread.Sleep(100);
             }
 
             // connect all devices
             for (int i = 0; i < deviceIPs.Count; i++)
             {
                 p.Start();
+                System.Threading.Thread.Sleep(100);
 
                 p.StandardInput.WriteLine($"adb connect {deviceIPs[i]}:5555");
+                System.Threading.Thread.Sleep(100);
+                
                 p.StandardInput.WriteLine("exit");
+                System.Threading.Thread.Sleep(100);
 
                 tmpLine = p.StandardOutput.ReadToEnd();
                 if (tmpLine.Contains("connected")) success[i] = true;
