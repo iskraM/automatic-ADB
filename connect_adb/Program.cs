@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace connect_adb
 {
@@ -19,7 +21,7 @@ namespace connect_adb
             Console.WriteLine();
         }
 
-        static void Connect()
+        static async Task Connect()
         {
             // disconnect previous connections
             Disconnect();
@@ -85,7 +87,7 @@ namespace connect_adb
 
                 p.StandardInput.WriteLine($"adb -s {id} tcpip 5555");
                 System.Threading.Thread.Sleep(100);
-                
+
                 p.StandardInput.WriteLine("exit");
                 System.Threading.Thread.Sleep(100);
             }
@@ -98,7 +100,7 @@ namespace connect_adb
 
                 p.StandardInput.WriteLine($"adb connect {deviceIPs[i]}:5555");
                 System.Threading.Thread.Sleep(100);
-                
+
                 p.StandardInput.WriteLine("exit");
                 System.Threading.Thread.Sleep(100);
 
@@ -106,7 +108,7 @@ namespace connect_adb
                 if (tmpLine.Contains("connected")) success[i] = true;
             }
 
-            Console.WriteLine("\nNaprave:");
+            Console.WriteLine("\nDevices:");
             ToStringDevices(deviceIDs, deviceIPs, success);
 
             p.WaitForExit();
@@ -133,39 +135,56 @@ namespace connect_adb
             return (res.Contains("disconnected everything") ? "Disconnected everything" : "Unexpected error occurred");
         }
 
-        static void Main(string[] args)
+        static CancellationTokenSource s_cts;
+
+        static async Task Main(string[] args)
         {
-            bool ok = false;
+            bool run = true;
             do
             {
-                Console.Write("Connect or disconnect [c/d]?\t");
-
-                string read = Console.ReadLine();
-
-                // poveži
-                if (read.ToLower() == "c")
+                try
                 {
-                    Console.Clear();
-                    Console.WriteLine("Connecting...");
-                    Connect();
-                    ok = true;
-                }
-                // razveži
-                else if (read.ToLower() == "d")
-                {
-                    Console.Clear();
-                    Console.WriteLine("Disconnecting...");
-                    Console.WriteLine(Disconnect());
-                    ok = true;
-                }
-                else
-                {
-                    Console.Clear();
-                    Console.WriteLine("Unsupported flag received.");
-                }
-            } while (!ok);
+                    Console.Write("Connect, disconnect or exit program [C/D/E]?\t");
 
-            Console.ReadKey(true);
+                    string read = Console.ReadLine();
+
+                    // poveži
+                    if (read.ToLower() == "c")
+                    {
+                        s_cts = new CancellationTokenSource();
+                        s_cts.CancelAfter(5000);
+                        Console.Clear();
+                        Console.WriteLine("Connecting...");
+                        await Task.Factory.StartNew(async () =>
+                        {
+                            await Connect();
+                        }, s_cts.Token);
+                    }
+                    // razveži
+                    else if (read.ToLower() == "d")
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Disconnecting...");
+                        Console.WriteLine(Disconnect());
+                    }
+                    else if (read.ToLower() == "e")
+                    {
+                        run = false;
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Unsupported flag received.");
+                    }
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("\nasks cancelled: timed out.\n");
+                }
+            } while (run);
+
+            
+            if (s_cts != null) s_cts.Dispose();
         }
     }
 }

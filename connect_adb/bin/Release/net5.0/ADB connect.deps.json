@@ -6,12 +6,12 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "connect_adb/1.0.0": {
+      "ADB connect/1.0.0": {
         "dependencies": {
           "Costura.Fody": "5.7.0"
         },
         "runtime": {
-          "connect_adb.dll": {}
+          "ADB connect.dll": {}
         }
       },
       "Costura.Fody/5.7.0": {
@@ -696,7 +696,7 @@
     }
   },
   "libraries": {
-    "connect_adb/1.0.0": {
+    "ADB connect/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

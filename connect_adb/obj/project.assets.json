@@ -4555,7 +4555,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "D:\\automatic-ADB\\connect_adb\\connect_adb.csproj",
-      "projectName": "connect_adb",
+      "projectName": "ADB connect",
       "projectPath": "D:\\automatic-ADB\\connect_adb\\connect_adb.csproj",
       "packagesPath": "C:\\Users\\programer.student\\.nuget\\packages\\",
       "outputPath": "D:\\automatic-ADB\\connect_adb\\obj\\",

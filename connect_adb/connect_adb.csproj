@@ -3,6 +3,9 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
+    <ApplicationIcon>ADB.ico</ApplicationIcon>
+    <Authors>dev_Minty</Authors>
+    <AssemblyName>ADB connect</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
